@@ -1,0 +1,189 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Arial";
+}
+
+a {
+	text-decoration: none;
+}
+
+.container {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 0;
+}
+
+.logo {
+	display: inline-block;
+	width: 150px;
+	height: 50px;
+	background-image: url("slike/logo.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+nav a {
+	position: relative;
+	color: black;
+	font-weight: bold;
+	padding: 15px;
+	margin: 0 15px;
+}
+
+nav a:not(.signin)::after {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	border-bottom: 1px solid black;
+	opacity: 0;
+	transition: opacity 1s linear;
+}
+
+nav a:hover::after  {
+	opacity: 1;
+}
+
+.signin {
+	border: 2px solid black;
+	padding: 15px 30px;
+	border-radius: 30px;
+}
+
+.signin:hover {
+	background-color: black;
+	color: white;
+	transition: background-color 5s, color 5s;
+}
+
+.intro {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	min-height: 400px;
+	background-image: url("slike/image.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.center {
+	width: 50%;
+	text-align: center;
+}
+
+.center p {
+	margin: 20px 0 30px;
+}
+
+input {
+	width: 250px;
+	padding: 10px 15px;
+	background-color: white;
+	border: 0;
+}
+
+.button {
+	padding: 10px 15px;
+	background-color: black;
+	color: white;
+	border: none;
+	transition: opacity 3s ease-in-out;
+}
+
+.button:hover {
+	opacity: .5;
+}
+
+.content {
+	display: flex;
+	padding: 50px 0;
+}
+
+.movie {
+	width: 66.66%;
+}
+
+.movie iframe {
+	width: 100%;
+}
+
+.text {
+	width: 33.33%;
+	padding: 30px 50px;
+}
+
+.text p {
+	margin: 20px 0;
+}
+
+.more {
+	display: inline-block;
+	border-radius: 30px;
+}
+
+.map iframe {
+	width: 100%;
+}
+
+@media (max-width: 767px) {
+	header {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+	}
+
+	nav a {
+		display: block;
+		margin: 15px 0;
+	}
+
+	.center {
+		width: 100%;
+	}
+
+	.button {
+		display: inline-block;
+		margin: 20px auto;
+	}
+
+	.content {
+		flex-direction: column;
+	}
+
+	.movie,
+	.text {
+		width: 100%;
+	}
+
+	.text {
+		order: 1;
+		text-align: center;
+	}
+
+	.movie {
+		order: 2;
+	}
+
+	.map iframe {
+		height: 300px;
+	}
+}
